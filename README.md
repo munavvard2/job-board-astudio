@@ -2,9 +2,11 @@
 
 ## getting started
 - clone the repository
-- run `composer install`
+- run `composer install` to install the composer packages
+- run `npm install` and `npm run build` to install the npm packages and build the assets
+- run `touch database/database.sqlite` because database file must be created before running the migration it might not have created.
 - run `php artisan migrate:fresh --seed` this will create 500 jobs (sample Data with Faker) with their location, language and category also some attributes, default database will be sqlite
-- run `composer run dev` to start application
+- run `composer run dev` to start application or run test suite `php artisan test` or `./vendor/bin/pest` or `./vendor/bin/pest tests/Unit/JobFilterServiceTest.php` in the root directory of the project
 
 
 ## API Endpoints
