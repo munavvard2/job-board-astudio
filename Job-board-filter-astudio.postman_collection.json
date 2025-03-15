@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "d18d0473-0fe2-46cc-b3bd-efb2adb24af5",
+		"name": "Job-board-filter-astudio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2996530"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/api/jobs?filter=attribute:years_experience=3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/jobs?filter=attribute:years_experience=3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "attribute:years_experience=3"
+						}
+					]
+				},
+				"description": "filter by just attribute"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/jobs?filter=job_type=contract",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/jobs?filter=job_type=contract",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "job_type=contract"
+						}
+					]
+				},
+				"description": "filter by job's fields"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/jobs?filter=languages HAS_ANY (Java,Python)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/jobs?filter=languages HAS_ANY (Java,Python)",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "languages HAS_ANY (Java,Python)"
+						}
+					]
+				},
+				"description": "filter by relationship contents"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/jobs?filter=(job_type=contract AND (languages HAS_ANY (Java,Python))) AND (locations IS_ANY (San Francisco,Vadodara)) AND (attribute:years_experience>=10 OR attribute:job_post_start_date>=2025-04-11)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/jobs?filter=(job_type=contract AND (languages HAS_ANY (Java,Python))) AND (locations IS_ANY (San Francisco,Vadodara)) AND (attribute:years_experience>=10 OR attribute:job_post_start_date>=2025-04-11)",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "(job_type=contract AND (languages HAS_ANY (Java,Python))) AND (locations IS_ANY (San Francisco,Vadodara)) AND (attribute:years_experience>=10 OR attribute:job_post_start_date>=2025-04-11)"
+						}
+					]
+				},
+				"description": "complex filters"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/jobs?filter=(job_type=contract))",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/jobs?filter=(job_type=contract))",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "(job_type=contract))"
+						}
+					]
+				},
+				"description": "error for parentheses mismatch"
+			},
+			"response": []
+		}
+	]
+}
